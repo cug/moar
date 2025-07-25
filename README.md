@@ -1,5 +1,6 @@
 [![Linux CI](https://github.com/walles/moar/actions/workflows/linux-ci.yml/badge.svg?branch=master)](https://github.com/walles/moar/actions/workflows/linux-ci.yml?query=branch%3Amaster)
 [![Windows CI](https://github.com/walles/moar/actions/workflows/windows-ci.yml/badge.svg?branch=master)](https://github.com/walles/moar/actions/workflows/windows-ci.yml?query=branch%3Amaster)
+PERSONAL VERSION - DO NOT USE
 
 Moar is a pager. It reads and displays UTF-8 encoded text from files or
 pipelines.
@@ -175,23 +176,23 @@ Here's one way to embed `moar` in your app:
 package main
 
 import (
-	"bytes"
-	"fmt"
+ "bytes"
+ "fmt"
 
-	"github.com/walles/moar/m"
+ "github.com/walles/moar/m"
 )
 
 func main() {
-	buf := new(bytes.Buffer)
-	for range [99]struct{}{} {
-		fmt.Fprintln(buf, "Moar")
-	}
+ buf := new(bytes.Buffer)
+ for range [99]struct{}{} {
+  fmt.Fprintln(buf, "Moar")
+ }
 
-	err := m.NewPager(m.NewReaderFromStream("Moar", buf)).Page()
-	if err != nil {
-		// Handle paging problems
-		panic(err)
-	}
+ err := m.NewPager(m.NewReaderFromStream("Moar", buf)).Page()
+ if err != nil {
+  // Handle paging problems
+  panic(err)
+ }
 }
 ```
 

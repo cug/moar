@@ -99,14 +99,14 @@ func (m PagerModeViewing) onRune(char rune) {
 
 	// '\x10' = CTRL-p, should scroll up one line.
 	// Ref: https://github.com/walles/moar/issues/107#issuecomment-1328354080
-	case 'k', 'y', '\x10':
+	case 'i', 'y', '\x10':
 		// Clipping is done in _Redraw()
 		p.scrollPosition = p.scrollPosition.PreviousLine(1)
 		p.handleScrolledUp()
 
 	// '\x0e' = CTRL-n, should scroll down one line.
 	// Ref: https://github.com/walles/moar/issues/107#issuecomment-1328354080
-	case 'j', 'e', '\x0e':
+	case 'k', 'e', '\x0e':
 		// Clipping is done in _Redraw()
 		p.scrollPosition = p.scrollPosition.NextLine(1)
 		p.handleScrolledDown()
